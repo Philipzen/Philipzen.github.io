@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Marie Philipzen — Portfolio</title>
-<meta name="description" content="Portfolio of Marie Philipzen — communication design student in Mannheim, working at the intersection of sports, movement, graphic and motion design.">
+<title>Marie Philipzen · Portfolio</title>
+<meta name="description" content="Portfolio of Marie Philipzen, communication design student in Mannheim, working at the intersection of sports, movement, graphic and motion design.">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="theme-color" content="#141414">
 <!-- Share preview (WhatsApp, LinkedIn, mail …) -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="Marie Philipzen — Portfolio">
-<meta property="og:description" content="Portfolio of Marie Philipzen — graphic and motion design, sports and movement.">
+<meta property="og:title" content="Marie Philipzen · Portfolio">
+<meta property="og:description" content="Portfolio of Marie Philipzen: graphic and motion design, sports and movement.">
 <meta property="og:url" content="https://mariephilipzen.de/">
 <meta property="og:image" content="https://mariephilipzen.de/preview.jpg">
 <meta name="twitter:card" content="summary_large_image">
@@ -355,6 +355,8 @@
     transition: opacity 0.32s ease, transform 0.32s ease, visibility 0.32s;
     pointer-events: none;
   }
+  /* nothing may stick out sideways (no horizontal swiping on phones) */
+  .screen, .overlay{ overflow-x: hidden; }
   .screen.is-open{
     opacity: 1;
     visibility: visible;
@@ -1030,6 +1032,11 @@
   }
   .overlay-media.is-natural img{ height: auto; object-fit: contain; }
   @media (max-width: 899px){ .overlay-media.is-natural{ width: 100%; } }
+  @media (max-width: 899px){
+    /* About photo: keep the white field fully inside the screen on phones */
+    .about-text .about-photo-card{ width: 86%; margin-left: auto; margin-right: auto; }
+    .about-photo-caption{ left: 0; }
+  }
 </style>
 </head>
 <body>
@@ -1047,12 +1054,12 @@
 
 <main id="top">
 
-  <!-- HERO — OPENER MIT SURF-ANIMATION -->
+  <!-- HERO: OPENER MIT SURF-ANIMATION -->
   <section class="hero">
     <img class="hero-video" src="portfolio-animation.webp" alt="" aria-hidden="true">
   </section>
 
-  <!-- ÜBER MICH — SCREEN -->
+  <!-- ÜBER MICH: SCREEN -->
   <section class="screen about" id="screen-about" aria-hidden="true">
     <div class="wrap">
       <button class="screen-back" data-close aria-label="Back"><svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true"><path d="M20 12H5.5M11.5 5.5 5 12l6.5 6.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
@@ -1075,7 +1082,7 @@
     </div>
   </section>
 
-  <!-- PROJEKTE — SCREEN -->
+  <!-- PROJEKTE: SCREEN -->
   <section class="screen gallery" id="screen-projects" aria-hidden="true">
     <div class="wrap">
       <button class="screen-back" data-close aria-label="Back"><svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true"><path d="M20 12H5.5M11.5 5.5 5 12l6.5 6.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
@@ -1143,7 +1150,7 @@
     </div>
   </section>
 
-  <!-- LEGAL NOTICE — SCREEN -->
+  <!-- LEGAL NOTICE: SCREEN -->
   <section class="screen legal" id="screen-legal" aria-hidden="true">
     <div class="wrap">
       <button class="screen-back" data-close aria-label="Back"><svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true"><path d="M20 12H5.5M11.5 5.5 5 12l6.5 6.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
@@ -1158,7 +1165,7 @@
     </div>
   </section>
 
-  <!-- PRIVACY POLICY — SCREEN -->
+  <!-- PRIVACY POLICY: SCREEN -->
   <section class="screen legal" id="screen-privacy" aria-hidden="true">
     <div class="wrap">
       <button class="screen-back" data-close aria-label="Back"><svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true"><path d="M20 12H5.5M11.5 5.5 5 12l6.5 6.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
@@ -1192,7 +1199,7 @@
     </div>
   </section>
 
-  <!-- KONTAKT — SCREEN -->
+  <!-- KONTAKT: SCREEN -->
   <section class="screen contact" id="screen-contact" aria-hidden="true">
     <div class="wrap">
       <button class="screen-back" data-close aria-label="Back"><svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true"><path d="M20 12H5.5M11.5 5.5 5 12l6.5 6.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
@@ -1224,7 +1231,7 @@
       </div>
     </div>
     <div class="wrap">
-      <p style="font-family:'Inter', sans-serif; font-size:0.85rem; opacity:0.6; margin-top:60px;">© 2026 Marie Philipzen — Designed &amp; animated by myself &nbsp;·&nbsp; <a href="#legal" data-screen="screen-legal" style="color:inherit;">Legal notice</a> &nbsp;·&nbsp; <a href="#privacy" data-screen="screen-privacy" style="color:inherit;">Privacy policy</a></p>
+      <p style="font-family:'Inter', sans-serif; font-size:0.85rem; opacity:0.6; margin-top:60px;">© 2026 Marie Philipzen &nbsp;·&nbsp; Designed &amp; animated by myself &nbsp;·&nbsp; <a href="#legal" data-screen="screen-legal" style="color:inherit;">Legal notice</a> &nbsp;·&nbsp; <a href="#privacy" data-screen="screen-privacy" style="color:inherit;">Privacy policy</a></p>
     </div>
   </section>
 
@@ -1373,23 +1380,23 @@
               <a class="watch-link" href="https://www.instagram.com/reel/DUWSuYvCIYT/" target="_blank" rel="noopener">Watch the film on Instagram →</a>
             </div>
             <h4>Concept</h4>
-            <p>Running and road cycling have more in common than you might think at first glance — and that is exactly what I wanted to show in my film. I looked for similar movements and connected them through matching cuts. Together with the music, this creates a rhythm that runs through the entire film.</p>
+            <p>Running and road cycling have more in common than you might think at first glance. That is exactly what I wanted to show in my film. I looked for similar movements and connected them through matching cuts. Together with the music, this creates a rhythm that runs through the entire film.</p>
             <p>It is also about the feeling of clearing your head through sport and forgetting everything around you for a moment. The black-and-white look draws attention to what matters most to me: the movement.</p>
             <h4>Process &amp; Preparation</h4>
-            <p>I planned and produced the entire project myself, from the first idea to the finished film — from developing the concept, the storyboard, scouting locations and choosing the music all the way to the shoot and the edit.</p>
+            <p>I planned and produced the entire project myself, from the first idea to the finished film. This included developing the concept, drawing the storyboard, scouting locations and choosing the music, all the way to the shoot and the edit.</p>
             <p>The film was shot in Cologne with two people. Afterwards, I reviewed the footage, experimented with different transitions and edited the film together step by step. All in all, it came together over a period of about eleven weeks.</p>
             <h4>Look &amp; Technical Setup</h4>
-            <p>Black and white, strong contrast, natural sunlight — fully focused on shape, rhythm and movement. Cut to the beat of “Escapist” by Duckwrth, with slow motion, match cuts and motion blur. Shot on a Canon&nbsp;EOS&nbsp;550D and a GoPro, exported in 1920×1080 at 24&nbsp;fps.</p>
+            <p>Black and white, strong contrast and natural sunlight keep the focus entirely on shape, rhythm and movement. Cut to the beat of “Escapist” by Duckwrth, with slow motion, match cuts and motion blur. Shot on a Canon&nbsp;EOS&nbsp;550D and a GoPro, exported in 1920×1080 at 24&nbsp;fps.</p>
             <h4>Storyboard</h4>
             <p>Every scene was sketched in advance and planned through with camera movement, shot size and duration.</p>
             <div class="overlay-gallery">
               <figure>
                 <img src="${STORYBOARD_1}" alt="Hand-drawn storyboard of Escaping in Rhythm, scenes 01 to 12" loading="lazy">
-                <figcaption>Storyboard, scenes 01–12</figcaption>
+                <figcaption>Storyboard, scenes 01 to 12</figcaption>
               </figure>
               <figure>
                 <img src="${STORYBOARD_2}" alt="Hand-drawn storyboard of Escaping in Rhythm, scenes 13 to 24" loading="lazy">
-                <figcaption>Storyboard, scenes 13–24</figcaption>
+                <figcaption>Storyboard, scenes 13 to 24</figcaption>
               </figure>
             </div>
           `
@@ -1416,16 +1423,16 @@
           desc: '',
           poster: SIGNAL_POSTER,
           stack: [
-            { video: SIGNAL_LOOP_VIDEO, poster: SIGNAL_LOOP_POSTER, alt: 'Find the Signal — animated poster without camera image' },
+            { video: SIGNAL_LOOP_VIDEO, poster: SIGNAL_LOOP_POSTER, alt: 'Find the Signal: animated poster without camera image' },
             SIGNAL_POSTER_IMG,
-            { video: SIGNAL_HAND_VIDEO, poster: SIGNAL_HAND_POSTER, alt: 'Find the Signal — the poster reacting to my open hand via hand tracking' }
+            { video: SIGNAL_HAND_VIDEO, poster: SIGNAL_HAND_POSTER, alt: 'Find the Signal: the poster reacting to my open hand via hand tracking' }
           ],
           stickyText: true,
           wide: true,
           extra: `
             <h4>Concept</h4>
             <p>Morse code is one of the oldest forms of communication using coded signals. Short and long signals come together to form a message. This is exactly the principle I wanted to pick up in my interactive poster.</p>
-            <p>Since Morse code can also be sent by tapping with a finger, I wanted to make the movement of the hand part of my poster. The idea was that you don’t simply read the hidden message — you have to become active yourself to discover it.</p>
+            <p>Since Morse code can also be sent by tapping with a finger, I wanted to make the movement of the hand part of my poster. The idea was that you don’t simply read the hidden message. You have to become active yourself to discover it.</p>
             <h4>Interaction</h4>
             <p>The poster reacts live to the person standing in front of it. Using hand tracking, the camera detects whether a hand is open or closed. When the hand is open, the word “SIGNAL” appears between the Morse characters. As soon as the hand closes, it disappears again.</p>
             <h4>Process &amp; Execution</h4>
@@ -1469,12 +1476,12 @@
             <div class="overlay-gallery">
               <figure>
                 <img src="${PLAYGROUND_OVERVIEW}" alt="Overview of all Playground applications: advertising poster, signage, tape roll, cutter knife, tote bag, program booklet and social media presence" loading="lazy">
-                <figcaption>Application overview — the corporate design across all touchpoints</figcaption>
+                <figcaption>Application overview: the corporate design across all touchpoints</figcaption>
               </figure>
             </div>
             <h4>Applications</h4>
             <p>It was important to me that the design doesn’t just work on a poster, but can be carried over to different media. That’s why, alongside posters, I also designed a program booklet, signage, an Instagram presence and various giveaways.</p>
-            <p>The tape appears again and again — sometimes as a graphic element, sometimes as the actual material.</p>
+            <p>The tape appears again and again, sometimes as a graphic element and sometimes as the actual material.</p>
             <h4>Process &amp; Execution</h4>
             <p>The project was created in the course Corporate Design Typography. I started with analog experiments, sticking letters together from tape, altering them and pulling them apart again.</p>
             <p>I then developed the shapes further digitally and tried out different drafts. Step by step, this resulted in a typeface of my own, which ultimately became the foundation for the entire corporate design.</p>
@@ -1492,7 +1499,7 @@
             <p>What actually lies behind a perfectly kept football pitch? That is exactly what I wanted to find out for my magazine. For this, I was allowed to accompany the greenkeeping team of TSG Hoffenheim for a day and look over their shoulders while they worked.</p>
             <p>I quickly realized that there is much more to the job than just mowing the grass. From irrigation and the right cutting height to the overall care of the turf, there is a lot to consider. With my magazine, I wanted to show how varied and physically demanding this work really is.</p>
             <h4>Structure &amp; Content</h4>
-            <p>The magazine offers an insight into the different tasks of a greenkeeper — from the equipment and irrigation to the various grass varieties and cutting techniques.</p>
+            <p>The magazine offers an insight into the different tasks of a greenkeeper, from the equipment and irrigation to the various grass varieties and cutting techniques.</p>
             <p>The focus is on infographics. My aim was to present even more complex processes and technical connections as simply and clearly as possible. The short texts provide the most important information, while graphics and illustrations make a lot of it immediately visible.</p>
             <h4>Process &amp; Execution</h4>
             <p>After my visit to TSG Hoffenheim, I went through the impressions, photos and information I had gathered and thought about how best to explain them visually.</p>
@@ -1594,7 +1601,7 @@
       counter.className = 'pager-counter';
       function update(){
         img.src = pages[idx];
-        img.alt = `${title} — page ${idx + 1} of ${pages.length}`;
+        img.alt = `${title}, page ${idx + 1} of ${pages.length}`;
         counter.textContent = `${idx + 1} / ${pages.length}`;
         prevBtn.disabled = idx === 0;
         nextBtn.disabled = idx === pages.length - 1;
@@ -1655,7 +1662,7 @@
             overlayMedia.appendChild(v);
             v.play().catch(() => {});
           } else {
-            overlayMedia.appendChild(makeImage(item, `${project.title} — image ${i + 1}`));
+            overlayMedia.appendChild(makeImage(item, `${project.title}, image ${i + 1}`));
           }
         });
       } else if (project.pages && project.pages.length){
@@ -1796,7 +1803,7 @@
     const email = document.getElementById('email').value;
     const message = document.getElementById('message').value;
     const subject = encodeURIComponent('Project inquiry from ' + name);
-    const body = encodeURIComponent(message + '\n\n— ' + name + ' (' + email + ')');
+    const body = encodeURIComponent(message + '\n\n' + name + ' (' + email + ')');
     window.location.href = `mailto:marie.philipzen@web.de?subject=${subject}&body=${body}`;
   });
 </script>
